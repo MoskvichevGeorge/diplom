@@ -1,6 +1,9 @@
-from django.shortcuts import render,HttpResponse
+from django.views.generic import ListView
+from .models import Post
 
-# Create your views here.
-def home(request):
-    return HttpResponse('Hello,Django!')
 
+
+class PostListView(ListView):
+    model = Post
+    template_name = 'post_list.html'
+    context_object_name = 'posts'

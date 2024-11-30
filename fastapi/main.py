@@ -22,8 +22,3 @@ class Item(BaseModel):
 @app.post('/items/')
 async def create_item(item: Item, item_name=None, item_price=None):
     return {'item_name': item_name, 'item_price': item_price, 'is_available' :item.is_avialable}
-
-
-
-
-
